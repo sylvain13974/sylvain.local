@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page de vote</title>
+</head>
+<body>
+  <h1>Votez pour votre logo préféré</h1>
+  <button onclick="voteForLogo(1)">Logo 1</button>
+  <button onclick="voteForLogo(2)">Logo 2</button>
+
+  <p id="voteMessage"></p>
+  <p id="stats"></p>
+
+  <script>
+    var totalVotes = 0;
+    var logo1Votes = 0;
+    var logo2Votes = 0;
+
+    function voteForLogo(logoNumber) {
+      // Incrémenter le nombre total de votes et le nombre de votes pour le logo spécifié
+      totalVotes++;
+      if (logoNumber === 1) {
+        logo1Votes++;
+      } else if (logoNumber === 2) {
+        logo2Votes++;
+      }
+
+      var voteMessage = document.getElementById("voteMessage");
+      voteMessage.textContent = "Merci pour votre vote !";
+
+      updateStats();
+    }
+
+    function updateStats() {
+      var stats = document.getElementById("stats");
+      var logo1Percentage = (logo1Votes / totalVotes) * 100 || 0;
+      var logo2Percentage = (logo2Votes / totalVotes) * 100 || 0;
+
+      stats.innerHTML = "Nombre de votants : " + totalVotes + "<br>";
+      stats.innerHTML += "Pourcentage de votes pour Logo 1 : " + logo1Percentage.toFixed(2) + "%<br>";
+      stats.innerHTML += "Pourcentage de votes pour Logo 2 : " + logo2Percentage.toFixed(2) + "%";
+    }
+  </script>
+</body>
+</html>

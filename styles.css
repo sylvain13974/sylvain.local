@@ -1,0 +1,23 @@
+.blue {
+  color: blue;
+}
+
+.black {
+  color: black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.image-container {
+  display: flex;
+}
+
+.image-container div {
+  margin-right: 10px;
+}
+
+.caption {
+  font-style: italic;
+}
