@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Page de vote</title>
+  <style>
+    .nav-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: blue;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    h1 {
+      color: red;
+    }
+  </style>
 </head>
 <body>
+  <button class="nav-button" onclick="goToPreviousPage()">Retour</button>
   <h1>Votez pour votre logo préféré</h1>
   <button onclick="voteForLogo(1)">Logo 1</button>
   <button onclick="voteForLogo(2)">Logo 2</button>
@@ -40,6 +57,10 @@
       stats.innerHTML = "Nombre de votants : " + totalVotes + "<br>";
       stats.innerHTML += "Pourcentage de votes pour Logo 1 : " + logo1Percentage.toFixed(2) + "%<br>";
       stats.innerHTML += "Pourcentage de votes pour Logo 2 : " + logo2Percentage.toFixed(2) + "%";
+    }
+
+    function goToPreviousPage() {
+      window.history.back();
     }
   </script>
 </body>
